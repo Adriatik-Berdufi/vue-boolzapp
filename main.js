@@ -133,6 +133,9 @@ const app = createApp({
             return lastMessage ? lastMessage.date.slice(-9) : '';
         },
         
+        setActiveIndex(index){
+            this.activeIndex = index;
+        },
 
         
        

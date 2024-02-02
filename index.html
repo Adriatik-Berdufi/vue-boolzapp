@@ -70,7 +70,7 @@
 
           <!--concacts section -->
          <div class="overflow-scroll">
-          <div @click="" v-for="contact in contacts" class="phone-contact box">
+          <div @click="setActiveIndex(index)" v-for="(contact, index) in contacts" class="phone-contact box">
             <div class="box-img ">
               <img :src="contact.avatar" alt="immagine del profilo" class="rounded-circle">
             </div>
