@@ -70,7 +70,7 @@
 
           <!--concacts section -->
          <div class="overflow-scroll">
-          <div v-for="contact in contacts" class="phone-contact box">
+          <div @click="" v-for="contact in contacts" class="phone-contact box">
             <div class="box-img ">
               <img :src="contact.avatar" alt="immagine del profilo" class="rounded-circle">
             </div>
@@ -92,10 +92,13 @@
           <div class="app-header">
             <div class="phone-contact box">
               <div class="box-img ">
-                <img src="./img/avatar_1.jpg" alt="" class="rounded-circle">
+                <img :src="activContact.avatar" alt="" class="rounded-circle">
               </div>
               <div class="box-info">
-                <div>name</div>
+                <div>
+                  <div>{{activContact.name}}</div>
+                  <div class="text-secondary">{{getTimeLastMessage(activContact.messages)}}</div>
+                </div>
                 <div class="text-secondary d-flex">
                   <div class="px-2 fs-4"><i class="bi bi-search"></i></div>
                   <div class="px-2 fs-4"><i class="bi bi-paperclip"></i></div>
@@ -109,13 +112,13 @@
           <div class="flex-grow-1 read-section">
 
             <!-- sent message -->
-            <div class="mess-sent">
-              <div>inviato</div>
+            <div  class="mess-sent">
+              <div>send</div>
               <div class="align-self-end text-secondary">ora</div>
 
             <!-- recive message -->
             </div>
-            <div class="mess-received">
+            <div  class="mess-received">
               <div>ricevuto</div>
               <div class="align-self-end text-secondary">ora</div>
             </div>

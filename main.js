@@ -110,6 +110,13 @@ const app = createApp({
             
         };
     },
+    computed: {
+        activContact(){
+            return this.contacts[this.activeIndex];
+        }
+            
+    },
+    
     
     
     methods: {
@@ -117,8 +124,7 @@ const app = createApp({
             return  message.length > maxLength ?  message.substring(0, maxLength) + '...' : message;
         },
         getLastMessage(messages){
-            const receivedMessages = messages.filter((message)=>message.status === 'received');
-            const lastMessage = receivedMessages[receivedMessages.length - 1];
+            const lastMessage = messages[messages.length - 1];
             return lastMessage ? this.maxLengthMessage(lastMessage.message, 15) : '';
         },
         getTimeLastMessage(messages){
@@ -131,11 +137,7 @@ const app = createApp({
         
        
     },
-    computed: {
-    
-            
-    },
-    
+   
     mounted(){
     },
 });
