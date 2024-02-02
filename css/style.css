@@ -1,7 +1,9 @@
 :root {
   --header-height: 90px;
   --footer-height: 90px;
-  
+  --app-header:75px;
+  --color-app-header:rgb(234, 234, 234);
+  --border:2px solid rgba(116, 116, 116, 0.333);
 }
 
 /** Reset **/
@@ -28,39 +30,96 @@ li {
   display: inline-block;
 }
 body{
-  background-color: rgba(212, 200, 184, 0.856);
+ background: linear-gradient(rgb(46, 150, 136) 20%, rgb(219, 219, 210) 20%);
 }
 
 /** Utils **/
-
-.container {
-  max-width: 1080px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
 .brd{
   border: 2px dashed black;
 }
 
 
-
-/** HEADER **/
-.header {
-  min-height: var(--header-height);
-  background-color: rgb(130, 64, 40);
-}
-
-
-
 /** MAIN **/
-
-
-
-
-/** FOOTER **/
-.footer {
-  min-height: var(--footer-height);
-  background-color: goldenrod;
+.container {
+  height:  90vh;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  background-color: aliceblue;
+  border: var(--border);
 }
+.contact{
+  width: 40%;
+}
+.messages{
+  display: flex;
+  flex-direction: column;
+  border-left: var(--border);
+  width: 60%;
+}
+.app-header{
+  height: var(--app-header);
+  background-color: var(--color-app-header);
+  
+}
+.notifications{
+  height: var(--app-header);
+  background-color: rgb(142, 218, 252);
+}
+.box{
+  display: flex;
+  padding: 8px;
+  height: var(--app-header);
+}
+.box-icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  font-size: 30px;
+}
+.phone-contact{
+  background-color: rgb(255, 255, 255);
+  border-bottom: var(--border)
+}
+.box-img{
+  width: 60px;
+  object-fit: fill;
+}
+.box-info{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  padding-inline: 8px;
+}
+.read-section{
+  overflow: scroll;
+  display: flex;
+  padding: 20px 40px;
+  flex-direction: column;
+  background-color: rgb(229, 221, 213);
+}
+.write-section{
+  background-color:rgb(243, 238, 234);
+  border-top: var(--border);
+}
+.messages .mess-sent,.messages .mess-received{
+  display:flex;
+  justify-content: space-between;
+  min-height: 50px;
+  width: 40%;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 10px 5px 10px 20px;
+}
+.mess-sent{
+  align-self: flex-end;
+  background-color: rgb(66, 203, 165);
+}
+.mess-received{
+  align-self: flex-start;
+  background-color: rgb(255, 255, 255);
+}
+rgb(46, 150, 136)

@@ -1,4 +1,4 @@
-const {createApp} = Vue;
+/*const {createApp} = Vue;
 const app = createApp({
     data(){
         return{
@@ -14,7 +14,7 @@ const app = createApp({
         
     },
 });
-app.mount('#app');
+app.mount('#app');*/
 
 
 
