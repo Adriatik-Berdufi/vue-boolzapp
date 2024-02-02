@@ -109,19 +109,13 @@
           </div>
 
           <!-- Read message section --> 
-          <div class="flex-grow-1 read-section">
+          <div  class="flex-grow-1 read-section">
 
-            <!-- sent message -->
-            <div  class="mess-sent">
-              <div>send</div>
-              <div class="align-self-end text-secondary">ora</div>
-
-            <!-- recive message -->
-            </div>
-            <div  class="mess-received">
-              <div>ricevuto</div>
-              <div class="align-self-end text-secondary">ora</div>
-            </div>
+            <!-- sent and recive message -->
+            <div v-for="message in activContact.messages" :class="message.status">
+              <div>{{message.message}}</div>
+              <div class="align-self-end text-secondary">{{message.date.slice(-9)}}</div>
+            </div> 
           </div>
 
           <!-- Write section -->

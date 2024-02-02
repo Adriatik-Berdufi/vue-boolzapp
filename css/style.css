@@ -105,20 +105,20 @@ body{
   background-color:rgb(243, 238, 234);
   border-top: var(--border);
 }
-.messages .mess-sent,.messages .mess-received{
+.messages .sent,.messages .received{
   display:flex;
   justify-content: space-between;
   min-height: 50px;
-  width: 40%;
+  width: 60%;
   border-radius: 10px;
   margin: 5px;
   padding: 10px 5px 10px 20px;
 }
-.mess-sent{
+.sent{
   align-self: flex-end;
   background-color: rgb(66, 203, 165);
 }
-.mess-received{
+.received{
   align-self: flex-start;
   background-color: rgb(255, 255, 255);
 }
