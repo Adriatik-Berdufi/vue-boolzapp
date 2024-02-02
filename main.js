@@ -148,8 +148,17 @@ const app = createApp({
         sendMessage(){
             const newMessage = {...this.newMessage};
             newMessage.date = this.getTime();
-            this.contacts[this.activeIndex].messages.push(newMessage);
+            this.activContact.messages.push(newMessage);
+            setTimeout(this.reciveMessage, 5000);
             this.newMessage.message = '';
+        },
+        reciveMessage(){
+          const newMessage ={
+            message : 'ok!',
+            date: this.getTime(),
+            status: 'received',
+          };
+          this.activContact.messages.push(newMessage);
         },
     },
    
