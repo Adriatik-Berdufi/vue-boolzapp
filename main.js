@@ -105,16 +105,38 @@ const app = createApp({
                     ],
                 }
             ],
+
+            activeIndex: 0,
             
         };
     },
+    
+    
     methods: {
+        maxLengthMessage(message, maxLength){
+            return  message.length > maxLength ?  message.substring(0, maxLength) + '...' : message;
+        },
+        getLastMessage(messages){
+            const receivedMessages = messages.filter((message)=>message.status === 'received');
+            const lastMessage = receivedMessages[receivedMessages.length - 1];
+            return lastMessage ? this.maxLengthMessage(lastMessage.message, 15) : '';
+        },
+        getTimeLastMessage(messages){
+            const receivedMessages = messages.filter((message)=>message.status === 'received');
+            const lastMessage = receivedMessages[receivedMessages.length - 1];
+            return lastMessage ? lastMessage.date.slice(-9) : '';
+        },
+        
+
+        
        
+    },
+    computed: {
+    
+            
     },
     
     mounted(){
-        
-        
     },
 });
 app.mount('#app');
