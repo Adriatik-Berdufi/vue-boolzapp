@@ -122,7 +122,7 @@
           <div class="box write-section">
             <div class="input-group mb-3 p-2">
               <div class="box-icon me-5"><i class="bi bi-emoji-smile-upside-down"></i></div>
-              <input type="text" class="form-control rounded-0 text-secondary " placeholder="Scrivi un messaggio...">
+              <input v-model="newMessage.message" @keyUp.enter="sendMessage()" type="text" class="form-control rounded-0 text-secondary " placeholder="Scrivi un messaggio...">
               <div class="box-icon" ><i class="bi bi-mic-fill"></i></div>
             </div>
           </div>

@@ -105,7 +105,11 @@ const app = createApp({
                     ],
                 }
             ],
-
+            newMessage:{
+                    date: '',
+                    message: '',
+                    status: 'sent',
+            },
             activeIndex: 0,
             
         };
@@ -136,9 +140,17 @@ const app = createApp({
         setActiveIndex(index){
             this.activeIndex = index;
         },
+        getTime(){
+            const now = new Date();
+            return `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
+        },
 
-        
-       
+        sendMessage(){
+            const newMessage = {...this.newMessage};
+            newMessage.date = this.getTime();
+            this.contacts[this.activeIndex].messages.push(newMessage);
+            this.newMessage.message = '';
+        },
     },
    
     mounted(){
