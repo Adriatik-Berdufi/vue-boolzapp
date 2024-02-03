@@ -111,13 +111,17 @@ const app = createApp({
                     status: 'sent',
             },
             activeIndex: 0,
+            searchInput:'',
+            searchResults:{},
             
         };
     },
     computed: {
         activContact(){
             return this.contacts[this.activeIndex];
-        }
+        },
+        
+       
             
     },
     
@@ -160,9 +164,17 @@ const app = createApp({
           };
           this.activContact.messages.push(newMessage);
         },
+        searchContact(){
+            const search = this.searchInput.toLowerCase(); 
+            console.log(search);         
+            this.searchResults = this.contacts.filter((contact) => contact.name.toLowerCase().includes(search));
+            console.log(this.searchResults);
+        },
+        
     },
    
     mounted(){
+        this.searchResults = this.contacts;
     },
 });
 app.mount('#app');

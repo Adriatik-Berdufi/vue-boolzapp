@@ -64,13 +64,14 @@
 
           <!-- search section -->
           <div class="input-group mb-3 p-2">
-            <button class="btn btn-outline-secondary rounded-0" type="button"><i class="bi bi-search"></i></button>
-            <input type="text" class="form-control rounded-0 text-secondary" placeholder="Cerca o inizi una nuova chat">
+            <button @click="searchContact()"  class="btn btn-outline-secondary rounded-0" type="button"><i class="bi bi-search"></i></button>
+            <input v-model="searchInput" @keyUp.enter="searchContact()" type="text" class="form-control rounded-0 text-secondary" placeholder="Cerca o inizi una nuova chat">
+            
           </div>
 
           <!--concacts section -->
          <div class="overflow-scroll">
-          <div @click="setActiveIndex(index)" v-for="(contact, index) in contacts" class="phone-contact box">
+          <div @click="setActiveIndex(index)" v-for="(contact, index) in searchResults" class="phone-contact box">
             <div class="box-img ">
               <img :src="contact.avatar" alt="immagine del profilo" class="rounded-circle">
             </div>
