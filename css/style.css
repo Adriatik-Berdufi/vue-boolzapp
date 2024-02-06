@@ -109,7 +109,7 @@ body{
   display:flex;
   justify-content: space-between;
   min-height: 50px;
-  width: 60%;
+  max-width: 60%;
   border-radius: 10px;
   margin: 5px;
   padding: 10px 5px 10px 20px;

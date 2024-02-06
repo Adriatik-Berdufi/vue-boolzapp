@@ -114,7 +114,7 @@
 
             <!-- sent and recive message -->
             <div v-for="message in activContact.messages" :class="message.status">
-              <div>{{message.message}}</div>
+              <div class="pe-3">{{message.message}}</div>
               <div class="align-self-end text-secondary">{{message.date.slice(-9)}}</div>
             </div> 
           </div>
@@ -123,8 +123,9 @@
           <div class="box write-section">
             <div class="input-group mb-3 p-2">
               <div class="box-icon me-5"><i class="bi bi-emoji-smile-upside-down"></i></div>
-              <input v-model="newMessage.message" @keyUp.enter="sendMessage()" type="text" class="form-control rounded-0 text-secondary " placeholder="Scrivi un messaggio...">
-              <div class="box-icon" ><i class="bi bi-mic-fill"></i></div>
+              <input v-model="newMessage.message" @keyUp.enter="sendMessage()" type="text" class="form-control rounded-0 text-secondary " placeholder="Scrivi un messaggio..."> 
+              <div v-if="newMessage.message == '' " class="box-icon" ><i class="bi bi-mic-fill"></i></div>
+              <div v-else="newMessage.message == '' " class="box-icon" ><i class="bi bi-telegram"></i></div>
             </div>
           </div>
         </div>
